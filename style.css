@@ -91,7 +91,7 @@ body {
   height: 70px;
   translate: -50%;
   border-radius: 100vh;
-  background: rgb(102, 46, 0);
+  background: rgb(230, 190, 170);
   transform-origin: top center;
   transform: rotate(-90deg);
   transition: none;
