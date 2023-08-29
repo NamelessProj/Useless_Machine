@@ -1,0 +1,102 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+
+.wrapper {
+  position: relative;
+  background: #111;
+  padding: 4rem 6rem;
+  padding-top: calc(6rem - 25px);
+  border-radius: 15px;
+  box-shadow: 0 0 30px #888;
+  overflow: hidden;
+}
+
+.btn-wrap {
+  position: relative;
+  width: 50px;
+  height: 30px;
+  border-radius: 100vh 100vh 0 0;
+  isolation: isolate;
+}
+.btn-wrap input {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  opacity: 0;
+}
+.btn-wrap .checkbox-body {
+  position: absolute;
+  background: #444;
+  inset: 0;
+  border-radius: 100vh 100vh 0 0;
+}
+.btn-wrap .checkbox-signal {
+  --_signal-color: green;
+  --_signal-border: 0 0 0 4px rgb(46 46 46);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15px;
+  aspect-ratio: 1;
+  border-radius: 100vh;
+  box-shadow: 0 0 0 transparent, var(--_signal-border);
+  background: rgb(29, 29, 29);
+  transition: background 0.5s ease-in, box-shadow 0.5s ease-in;
+}
+.btn-wrap .checkbox-lever {
+  position: absolute;
+  z-index: -1;
+  width: 6px;
+  height: 40px;
+  border-radius: 100vh;
+  background: #333;
+  top: 50%;
+  left: 50%;
+  translate: -50% -100%;
+  transform-origin: bottom center;
+  transition: transform 0.3s ease-in 0.2s;
+}
+.btn-wrap:has(input:checked) .checkbox-signal {
+  background: var(--_signal-color);
+  box-shadow: 0 0 15px var(--_signal-color), var(--_signal-border);
+  transition: none;
+}
+.btn-wrap:has(input:checked) .checkbox-lever {
+  transform: rotate(30deg);
+  transition-delay: 0s;
+}
+
+.arm {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  width: 10px;
+  height: 70px;
+  translate: -50%;
+  border-radius: 100vh;
+  background: rgb(102, 46, 0);
+  transform-origin: top center;
+  transform: rotate(-90deg);
+  transition: none;
+}
+.arm.active {
+  transform: rotate(90deg);
+  transition: transform 1s ease;
+}/*# sourceMappingURL=style.css.map */
