@@ -96,7 +96,21 @@ body {
   transform: rotate(-90deg);
   transition: none;
 }
+.arm::before {
+  --_shirt-color-1: #8888f3;
+  --_shirt-color-2: #ce1111;
+  content: "";
+  position: absolute;
+  inset: 0;
+  bottom: 15px;
+  background-color: var(--_shirt-color-1);
+  opacity: 0.8;
+  background-image: linear-gradient(135deg, var(--_shirt-color-2) 25%, transparent 25%), linear-gradient(225deg, var(--_shirt-color-2) 25%, transparent 25%), linear-gradient(45deg, var(--_shirt-color-2) 25%, transparent 25%), linear-gradient(315deg, var(--_shirt-color-2) 25%, var(--_shirt-color-1) 25%);
+  background-position: 10px 0, 10px 0, 0 0, 0 0;
+  background-size: 10px 10px;
+  background-repeat: repeat;
+}
 .arm.active {
   transform: rotate(90deg);
   transition: transform 1s ease;
-}/*# sourceMappingURL=style.css.map */
+}
